@@ -1,0 +1,148 @@
+/* CSS Setup and Reset from https://www.joshwcomeau.com/css/custom-css-reset/*/
+/*
+  1. Use a more-intuitive box-sizing model.
+*/
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+/*
+    2. Remove default margin
+  */
+* {
+  margin: 0;
+}
+/*
+    Typographic tweaks!
+    3. Add accessible line-height
+    4. Improve text rendering
+  */
+
+/*
+    5. Improve media defaults
+  */
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+/*
+    6. Remove built-in form typography styles
+  */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+/*
+    7. Avoid text overflows
+  */
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+/*
+    8. Create a root stacking context
+  */
+#root,
+#__next {
+  isolation: isolate;
+}
+
+/*Mobile Design*/
+
+/*Setting up the body as a container containg the main container in the middle and defining properties over it*/
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@800&display=swap");
+body {
+  /*Display*/
+  background-color: #1f2732;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 90vh;
+
+  /*Text and reset*/
+  font-family: "Manrope", sans-serif;
+  font-size: 28px;
+  line-height: 1.2;
+  -webkit-font-smoothing: antialiased;
+}
+
+/*Setting up the main Container*/
+.mainContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 90vw;
+  border-radius: 10px;
+  height: auto;
+  text-align: center;
+  background-color: #313a49;
+}
+
+.headingContainer {
+  padding-top: 20px;
+  font-weight: 600;
+  margin: 20px 0;
+  font-size: 0.3em;
+  color: #53ffab;
+}
+
+.adviceContainer {
+  font-weight: 550;
+  color: #cee3e8;
+  margin: 0px 20px 20px 20px;
+}
+
+.buttonContainer,
+.seperator {
+  display: flex;
+  justify-content: center;
+}
+
+.seperator {
+  margin-bottom: 20px;
+  height: 15px;
+  background-image: url(./images/pattern-divider-mobile.svg);
+  background-repeat: no-repeat;
+  background-size: 80%;
+  background-position: 50%;
+}
+
+button {
+  height: 150%;
+  aspect-ratio: 1/1;
+  border-radius: 50%;
+  transform: translateY(25%);
+  background-color: #53ffab;
+  background-image: url(./images/icon-dice.svg);
+  background-repeat: no-repeat;
+  background-size: repeat(2, 50%);
+  background-position: center;
+  cursor: pointer;
+}
+
+button:hover {
+  box-shadow: #53ffab 0px 0px 30px 0px;
+}
+
+@media screen and (min-width: 540px) {
+  .mainContainer {
+    width: 490px;
+  }
+
+  .seperator {
+    background-image: url(./images/pattern-divider-desktop.svg);
+  }
+}
